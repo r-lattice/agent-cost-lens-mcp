@@ -5,7 +5,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/) · versioning: semver.
 live in `releases/`. The deployed version is verifiable at `/v1/health`
 (`{"version": ...}`) — bump it in `server/app.py` with every release.
 
-## [1.1.0] — 2026-07-20 (pending deploy)
+## [1.1.1] — 2026-07-22
+### Fixed
+- **Sonnet 5 intro pricing honored.** Reports priced Sonnet 5 at the standard
+  $3/$15 per MTok; Anthropic's introductory $2/$10 (through 2026-08-31) now
+  applies by record date. Sonnet 5 costs in earlier reports were overstated by
+  up to ~33% during the intro window — re-run for corrected figures.
+- **Web fetch now free**, matching Anthropic's current pricing (was billed at
+  $0.01/call).
+### Added
+- **Nightly pricing verification.** Rates are checked every night against
+  Anthropic's published pricing pages by an automated watcher; any drift is
+  corrected or escalated to a human — never silently ignored.
+
+## [1.1.0] — 2026-07-20
 ### Added
 - **Plan-aware reporting for flat-fee subscriptions (Claude Max/Pro).**
   Configure once (`~/.config/agent-cost-lens/plan.json`: `{name, monthly_cost}`)

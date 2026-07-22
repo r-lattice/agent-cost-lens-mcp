@@ -5,6 +5,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/) · versioning: semver.
 live in `releases/`. The deployed version is verifiable at `/v1/health`
 (`{"version": ...}`) — bump it in `server/app.py` with every release.
 
+## [1.2.1] — 2026-07-22
+### Added
+- **The audit, on video.** The landing page now embeds the 30-second
+  ["Don't trust us — audit us"](https://youtu.be/EcxSYQlHWyQ) demo —
+  click-to-load with the privacy-enhanced player, so nothing loads from
+  YouTube until you press play.
+
+## [1.2.0] — 2026-07-22
+### Added
+- **Public changelog page.** This release history is now served at
+  [lens.r-lattice.com/changelog](https://lens.r-lattice.com/changelog) —
+  rendered from this file, so the page can never drift from the record.
+  Linked from the landing page and llms.txt.
+
 ## [1.1.1] — 2026-07-22
 ### Fixed
 - **Sonnet 5 intro pricing honored.** Reports priced Sonnet 5 at the standard

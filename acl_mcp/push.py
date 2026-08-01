@@ -11,7 +11,7 @@ def to_record(e):
 
     Compact by construction: the date carries no time half (the reader slices
     [:10]) and zero-valued counters are omitted rather than spelled out, because
-    _int_field treats absent as 0. Both are the reader's existing behaviour, so
+    _int_field treats absent as 0. Both are the reader's existing behavior, so
     this stays apilog-v1 — an older server reads it unchanged. Measured
     2026-07-30 on 9,548 real events: 403 -> 274 bytes/record, and
     server_tool_use was all-zero on 100% of them."""
@@ -60,7 +60,7 @@ def server_accepts(url, coding, timeout=10):
     Fail-dark by construction (F4): ANY failure — an old server with no
     `accepts` key, no /v1/health at all, a timeout, a proxy returning HTML —
     answers False and the caller sends a plain body, which every server this
-    project has ever deployed still reads. Compression is an optimisation and
+    project has ever deployed still reads. Compression is an optimization and
     is never allowed to be the reason a push fails."""
     try:
         with urllib.request.urlopen(url.rstrip("/") + "/v1/health",
@@ -75,7 +75,7 @@ def send(payload, url, key, timeout=30):
                "Authorization": f"Bearer {key}"}
     if server_accepts(url, "gzip", timeout=timeout):
         # mtime=0 explicitly, NOT by default: gzip stamps the clock into the
-        # header, and which behaviour you get depends on the interpreter (3.11
+        # header, and which behavior you get depends on the interpreter (3.11
         # made 0 the default; this package supports >=3.10). A wire property
         # must not vary with the user's Python — so it is stated, not inherited.
         data = gzip.compress(data, mtime=0)

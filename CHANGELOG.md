@@ -18,7 +18,7 @@ live in `releases/`. The deployed version is verifiable at `/v1/health`
   figures can be recomputed later. Findings moved to their own per-push record
   at the same time. Nothing about what leaves your machine changed: same wire,
   same pseudonyms, same `preview_upload` audit.
-- Client 1.3.1: comment cleanups only, no behaviour change.
+- Client 1.3.1: comment cleanups only, no behavior change.
 
 ## [1.5.0] — 2026-07-30
 ### Added
@@ -45,7 +45,7 @@ live in `releases/`. The deployed version is verifiable at `/v1/health`
   capped, so a small upload cannot claim a large amount of server memory. The
   per-request event limit still applies after decompression.
 - **A `Content-Encoding` the server never advertised is refused by name.**
-  Previously an unrecognised encoding would have been read as plain text and
+  Previously an unrecognized encoding would have been read as plain text and
   reported as malformed JSON, which describes the wrong problem.
 
 ## [1.4.0] — 2026-07-30

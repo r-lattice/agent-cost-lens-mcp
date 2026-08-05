@@ -45,3 +45,7 @@ the payload yourself; that output is the whole story.
 ```
 Install: `pip install <tarball>` (or `uvx --from <dir> acl-mcp`). Get a key
 from the operator. `preview_upload` needs neither.
+
+---
+
+*Reviewed 5 August 2026.*
